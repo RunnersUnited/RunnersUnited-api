@@ -1,0 +1,52 @@
+<mat-card *ngFor="let rutina of rutinas" style="margin-top: 15px; max-height: 350px; overflow: auto;" class="example-card">
+<mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ rutina.nombre }}</mat-card-title>
+    <mat-card-subtitle>{{ rutina.id }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="example-card-content">
+      <div>
+        <mat-list>
+          <mat-list-item>
+            <div matLine>
+              <strong>Descripción de la Rutina:</strong>
+            </div>
+          </mat-list-item>
+          <mat-list-item>
+            <div matLine class="example-card-description">
+              <div class="description-content">{{ rutina.descripcion }}</div>
+            </div>
+          </mat-list-item>
+          <mat-list-item>
+            <div matLine>
+              <strong>Nivel:</strong> {{ rutina.nivel }}
+            </div>
+          </mat-list-item>
+          <mat-list-item>
+            <div matLine>
+              <strong>Fecha de inicio:</strong> {{ rutina.fechaInicio }}
+            </div>
+          </mat-list-item>
+          <mat-list-item>
+            <div matLine>
+              <strong>Fecha de finalización:</strong> {{ rutina.fechaFin }}
+            </div>
+          </mat-list-item>
+          <mat-list-item>
+            <div matLine>
+              <strong>Cantidad de dias:</strong> {{ rutina.cantidadDias }}
+            </div>
+          </mat-list-item>
+          <mat-list-item>
+            <div matLine>
+              <strong>Progreso:</strong>
+              <mat-progress-bar mode="determinate" [value]="rutina.progreso"></mat-progress-bar>
+              {{ rutina.progreso }}%
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,77 @@
+<mat-card *ngFor="let usuario of usuarios" style="margin-top: 15px;" class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ usuario.nombre }}</mat-card-title>
+    <mat-card-subtitle>{{ usuario.correoUsuario }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="example-card-content">
+      <div>
+        <mat-list>
+          <mat-list-item>
+            <div matLine>
+              Género:
+              <button mat-button>{{ usuario.genero }}</button>
+            </div>
+          </mat-list-item>
+          <mat-list-item>
+            <div matLine>
+              Edad:
+              <button mat-button>{{ usuario.edad }}</button>
+            </div>
+          </mat-list-item>
+          <mat-list-item>
+            <div matLine>
+              Altura:
+              <button mat-button>{{ usuario.altura }}</button>
+            </div>
+          </mat-list-item>
+          <mat-list-item>
+            <div matLine>
+              Peso:
+              <button mat-button>{{ usuario.peso }}</button>
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+
+      <!-- Columna derecha -->
+      <div>
+        <mat-list>
+          <mat-list-item>
+            <div matLine>
+              ID:
+              <button mat-button>{{ usuario.id }}</button>
+            </div>
+          </mat-list-item>
+          <mat-list-item>
+            <div matLine>
+              Tipo:
+              <button mat-button>{{ usuario.tipo }}</button>
+            </div>
+          </mat-list-item>
+          <mat-list-item>
+            <div matLine>
+              IMC:
+              <button mat-button>{{ usuario.imc }}</button>
+            </div>
+          </mat-list-item>
+          <mat-list-item>
+            <div matLine>
+              Estado IMC:
+              <button mat-button>{{ usuario.estado }}</button>
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="button-container">
+    <button mat-button color="primary" title='Eliminar' (click)="eliminarUsuario(usuario.id)"> Eliminar Usuario
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button mat-button color="warn" (click)="crearRutina(usuario.id)">Crear Rutina</button>
+    <button mat-button color="warn" (click)="verRutina(usuario.id)">Visualizar Rutinas</button>
+    <button mat-button color="warn" (click)="verTiempo(usuario.id)">Visualizar Tiempos</button>
+  </mat-card-actions>
+</mat-card>

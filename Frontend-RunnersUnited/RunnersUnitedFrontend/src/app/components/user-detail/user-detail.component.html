@@ -1,0 +1,63 @@
+<h1>Bienvenido {{ userDetails.nombre }}</h1>
+<h3>Puedes visualizar tu informe personal aqui</h3>
+<mat-card *ngIf="userDetails" style="margin-top: 15px;" class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ userDetails.nombre }}</mat-card-title>
+    <mat-card-subtitle>{{ userDetails.correoUsuario }}</mat-card-subtitle>
+    <mat-card-subtitle>{{ userDetails.idUsuario }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item>
+        <div matLine>
+          Género:
+          <button mat-button>{{ userDetails.genero }}</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div matLine>
+          Edad:
+          <button mat-button>{{ userDetails.edad }}</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div matLine>
+          Altura:
+          <button mat-button>{{ userDetails.altura }}</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div matLine>
+          Peso:
+          <button mat-button>{{ userDetails.peso }}</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div matLine>
+          Tipo:
+          <button mat-button>{{ userDetails.tipo }}</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div matLine>
+          IMC:
+          <button mat-button>{{ userDetails.imc }}</button>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <div matLine>
+          Estado IMC:
+          <button mat-button>{{ userDetails.estado }}</button>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
+
+<h2>¿Que deseas hacer?</h2>
+<div class="button-container">
+  <button mat-button color="primary" (click)="verRutina()">Visualizar Mis Rutinas</button>
+  <button mat-button color="primary" (click)="registrarTiempo()">Registrar Tiempo</button>
+  <button mat-button color="primary" (click)="verTiempo()">Visualizar Mis Tiempos</button>
+</div>

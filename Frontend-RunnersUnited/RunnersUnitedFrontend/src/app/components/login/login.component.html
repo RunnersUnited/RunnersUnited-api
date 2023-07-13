@@ -1,0 +1,16 @@
+<body>
+    <section class="login-box">
+
+        <h1 class="bienvenida">Inicia Sesión en LionsBeer</h1>
+        <form #loginform="ngForm" (ngSubmit)="loginUser()">
+            <input type="email" name="correo" [(ngModel)]="usuario.correoUsuario" class="form-control" placeholder="Correo" required autofocus>
+            <input type="password" name="contrasena" [(ngModel)]="usuario.contrasenaUsuario" class="form-control" placeholder="Contraseña">
+            <p class="danger">{{msg}}</p>
+
+            <input type="submit" value="Iniciar Sesión" required>
+        </form>
+        <div class="registro">
+            <a class="registrate" routerLink="../register">Regístrate aquí</a>
+        </div>
+    </section>
+</body>

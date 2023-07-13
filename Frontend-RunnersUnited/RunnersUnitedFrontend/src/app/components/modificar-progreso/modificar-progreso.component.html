@@ -1,0 +1,12 @@
+<div class="registration-form m-3 p-4">
+  <div class="row">
+    <div class="col-md-6">
+      <button [disabled]="valorSeleccionado !== null" (click)="establecerValor(10)" [ngClass]="{'btn-danger': valorSeleccionado !== 10, 'btn-primary': valorSeleccionado === null}" mat-raised-button color="primary">No hice mucho</button>
+      <button [disabled]="valorSeleccionado !== null" (click)="establecerValor(30)" [ngClass]="{'btn-danger': valorSeleccionado !== 30, 'btn-primary': valorSeleccionado === null}" mat-raised-button color="primary">Avancé algo más</button>
+      <button [disabled]="valorSeleccionado !== null" (click)="establecerValor(50)" [ngClass]="{'btn-danger': valorSeleccionado !== 50, 'btn-primary': valorSeleccionado === null}" mat-raised-button color="primary">Hice La mitad</button>
+      <button [disabled]="valorSeleccionado !== null" (click)="establecerValor(80)" [ngClass]="{'btn-danger': valorSeleccionado !== 80, 'btn-primary': valorSeleccionado === null}" mat-raised-button color="primary">Ya Casi Termino</button>
+      <button [disabled]="valorSeleccionado !== null" (click)="establecerValor(100)" [ngClass]="{'btn-danger': valorSeleccionado !== 100, 'btn-primary': valorSeleccionado === null}" mat-raised-button color="primary">Lo terminé Satisfactoriamente</button>
+    </div>
+  </div>
+  <button [disabled]="valorSeleccionado === null" (click)="registrarProgreso()" class="mt-4" mat-raised-button color="accent">Actualizar Progreso</button>
+</div>

@@ -1,0 +1,15 @@
+<h1>Hora de Registrar tus tiempos</h1>
+<h3>Puedes empezar a correr y decirle a alguien que registre tus tiempos</h3>
+<mat-card>
+  <mat-card-content>
+    <div class="cronometro">
+      <h2>{{ tiempo.duracion }}</h2>
+    </div>
+    <div class="botones">
+      <button mat-raised-button color="primary" (click)="iniciarCronometro()" [disabled]="running">Iniciar</button>
+      <button mat-raised-button color="warn" (click)="detenerCronometro()" [disabled]="!running">Detener</button>
+      <button mat-raised-button color="accent" (click)="reiniciarCronometro()">Reiniciar</button>
+      <button mat-raised-button color="primary" (click)="guardarTiempo()">Guardar</button>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,45 @@
+<div class="registration-form m-3 p-4">
+  <form [formGroup]="rutinaForm">
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre de rutina</mat-label>
+          <input formControlName="nombre" matInput placeholder="Nombre">
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-card>
+          <mat-form-field appearance="outline">
+            <mat-label>Descripción</mat-label>
+            <mat-select formControlName="descripcion" placeholder="Descripción">
+              <mat-option *ngFor="let ejercicio of rutinasPersonalizadas" [value]="ejercicio">{{ ejercicio }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-card>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Nivel</mat-label>
+          <input formControlName="nivel" matInput placeholder="Nivel">
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Fecha de finalización</mat-label>
+          <input formControlName="fechaFin" matInput [matDatepicker]="picker" placeholder="Fecha de finalización">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline">
+          <mat-label>Progreso</mat-label>
+          <input formControlName="progreso" matInput placeholder="Progreso" value="0" readonly>
+        </mat-form-field>
+      </div>
+    </div>
+    <button (click)="registrarRutina()" class="mt-4" mat-raised-button color="accent">Registrar Rutina</button>
+  </form>
+</div>
